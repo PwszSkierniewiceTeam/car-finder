@@ -1,0 +1,8 @@
+$grid-gutter-width: 0;
+
+@import '~bootstrap/scss/bootstrap-grid';
+
+.col,
+[class*='col-'] {
+  margin-bottom: 20px;
+}

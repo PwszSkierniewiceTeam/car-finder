@@ -1,0 +1,70 @@
+@import '~@angular/material/theming';
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$cf-accent: (
+  50: #f4f1eb,
+  100: #e4ddce,
+  200: #d3c6ad,
+  300: #c1af8c,
+  400: #b39d74,
+  500: #a68c5b,
+  600: #9e8453,
+  700: #957949,
+  800: #8b6f40,
+  900: #7b5c2f,
+  A100: #ffe6c3,
+  A200: #ffd090,
+  A400: #ffbb5d,
+  A700: #ffb044,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text
+  )
+);
+
+$cf-primary: (
+  50: #e8f0fa,
+  100: #c6daf4,
+  200: #a1c2ec,
+  300: #7ba9e4,
+  400: #5e96df,
+  500: #4284d9,
+  600: #3c7cd5,
+  700: #3371cf,
+  800: #2b67ca,
+  900: #1d54c0,
+  A100: #f7faff,
+  A200: #c4d6ff,
+  A400: #91b3ff,
+  A700: #78a1ff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text
+  )
+);

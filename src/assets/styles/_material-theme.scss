@@ -1,0 +1,73 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import 'variables';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$CarFinder-primary: mat-palette($cf-primary);
+$CarFinder-accent: mat-palette($cf-accent, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$CarFinder-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$CarFinder-theme: mat-light-theme($CarFinder-primary, $CarFinder-accent, $CarFinder-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat-core();
+//@include mat-badge-theme($CarFinder-theme);
+//@include mat-core-theme($CarFinder-theme);
+//@include mat-autocomplete-theme($CarFinder-theme);
+@include mat-button-theme($CarFinder-theme);
+//@include mat-button-toggle-theme($CarFinder-theme);
+//@include mat-card-theme($CarFinder-theme);
+//@include mat-checkbox-theme($CarFinder-theme);
+//@include mat-chips-theme($CarFinder-theme);
+//@include mat-datepicker-theme($CarFinder-theme);
+//@include mat-dialog-theme($CarFinder-theme);
+//@include mat-divider-theme($CarFinder-theme);
+//@include mat-expansion-panel-theme($CarFinder-theme);
+//@include mat-form-field-theme($CarFinder-theme);
+//@include mat-grid-list-theme($CarFinder-theme);
+//@include mat-icon-theme($CarFinder-theme);
+//@include mat-input-theme($CarFinder-theme);
+//@include mat-list-theme($CarFinder-theme);
+//@include mat-menu-theme($CarFinder-theme);
+//@include mat-paginator-theme($CarFinder-theme);
+//@include mat-progress-bar-theme($CarFinder-theme);
+//@include mat-progress-spinner-theme($CarFinder-theme);
+//@include mat-radio-theme($CarFinder-theme);
+//@include mat-select-theme($CarFinder-theme);
+//@include mat-sidenav-theme($CarFinder-theme);
+//@include mat-slide-toggle-theme($CarFinder-theme);
+//@include mat-slider-theme($CarFinder-theme);
+//@include mat-snack-bar-theme($CarFinder-theme);
+//@include mat-bottom-sheet-theme($CarFinder-theme);
+//@include mat-stepper-theme($CarFinder-theme);
+//@include mat-table-theme($CarFinder-theme);
+//@include mat-tabs-theme($CarFinder-theme);
+//@include mat-toolbar-theme($CarFinder-theme);
+//@include mat-tooltip-theme($CarFinder-theme);
+//@include mat-tree-theme($CarFinder-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
