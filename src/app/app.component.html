@@ -1,14 +1,154 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-6">
-      <button mat-raised-button color="accent">Test button</button>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Body type</mat-label>
+          <mat-select formControlName="bodyType">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let bodyType of bodyTypes" [value]="bodyType">
+              {{ bodyType }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 dual-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Capacity from</mat-label>
+          <mat-select formControlName="capacityFrom">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let capacity of capacities" [value]="capacity.value">
+              {{ capacity.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Capacity to</mat-label>
+          <mat-select formControlName="capacityTo">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let capacity of capacities" [value]="capacity.value">
+              {{ capacity.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Company</mat-label>
+          <mat-select formControlName="company">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let company of companies" [value]="company.value">
+              {{ company.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Drive type</mat-label>
+          <mat-select formControlName="driveType">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let driveType of driveTypes" [value]="driveType.value">
+              {{ driveType.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Fuel</mat-label>
+          <mat-select formControlName="fuel">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let fuel of fuels" [value]="fuel.value">
+              {{ fuel.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 dual-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Combustion from</mat-label>
+          <mat-select formControlName="fuelConsumptionFrom">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let combustion of combustions" [value]="combustion.value">
+              {{ combustion.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Combustion to</mat-label>
+          <mat-select formControlName="fuelConsumptionTo">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let combustion of combustions" [value]="combustion.value">
+              {{ combustion.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 dual-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Power from</mat-label>
+          <mat-select formControlName="powerFrom">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let power of powers" [value]="power.value">
+              {{ power.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Power to</mat-label>
+          <mat-select formControlName="powerTo">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let power of powers" [value]="power.value">
+              {{ power.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 dual-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Price from</mat-label>
+          <input matInput type="number" formControlName="priceFrom" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Price to</mat-label>
+          <input matInput type="number" formControlName="priceTo" />
+        </mat-form-field>
+      </div>
+      <div class="col-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Transmission</mat-label>
+          <mat-select formControlName="transmission">
+            <mat-option [value]="null"></mat-option>
+            <mat-option *ngFor="let transmission of transmissions" [value]="transmission.value">
+              {{ transmission.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
-    <div class="col-6">
-      <button mat-raised-button color="primary">Test button</button>
+    <div class="row">
+      <div class="col-6">
+        <button class="submit" mat-raised-button color="primary" type="submit">
+          Search
+        </button>
+      </div>
+      <div class="col-5">
+        <button class="submit" mat-raised-button color="accent" type="reset" (click)="onReset()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-12">
+      <h3>Search params:</h3>
+      <pre>{{ searchParams | json }}</pre>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
+      <h3>Cars:</h3>
       <pre>{{ cars$ | async | json }}</pre>
     </div>
   </div>
