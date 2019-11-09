@@ -149,7 +149,9 @@
   <div class="row">
     <div class="col-12">
       <h3>Cars:</h3>
-      <pre>{{ cars$ | async | json }}</pre>
+      <div class="col-12" *ngFor="let car of cars$ | async">
+        <app-car-component [car]="car"> </app-car-component>
+      </div>
     </div>
   </div>
 </div>

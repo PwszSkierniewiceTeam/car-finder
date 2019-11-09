@@ -9,9 +9,10 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomMaterialModule } from './custom-material.module';
+import { CarComponentComponent } from './components/car-component/car-component.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CarComponentComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

@@ -1,0 +1,20 @@
+<div id="container">
+  <div id="image">
+    <img src="{{ car.imageUrl }}" width="500" height=" 300" />
+  </div>
+  <div id="data">
+    <pre>
+      Marka: {{ car.company }}
+      Model:  {{ car.model }}
+      Wersja: {{ car.version }}
+      Nadwozie: {{ car.bodyType }}
+      Pojemność:  {{ car.capacity }}
+      Moc:  {{ car.power }} KM
+      Paliwo: {{ car.fuel }}
+      Spalanie: {{ car.fuelConsumption }} l/100
+      Napęd:  {{ car.driveType }}
+      Skrzynia biegów:  {{ car.transmission }}
+      Cena: {{ car.price }} PLN
+    </pre>
+  </div>
+</div>
