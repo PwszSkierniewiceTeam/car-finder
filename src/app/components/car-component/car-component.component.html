@@ -1,20 +1,24 @@
-<div id="container">
-  <div id="image">
-    <img src="{{ car.imageUrl }}" width="500" height=" 300" />
+<mat-card>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <img src="{{ car.imageUrl }}" />
+      </div>
+      <div class="col-8">
+        <pre>
+          Company: {{ car.company }}
+          Model:  {{ car.model }}
+          Version: {{ car.version }}
+          Body Type: {{ car.bodyType }}
+          Capacity:  {{ car.capacity }}
+          Power:  {{ car.power }} KM
+          Fuel: {{ car.fuel }}
+          Fuel Consumption: {{ car.fuelConsumption }} l/100
+          Drive Type:  {{ car.driveType }}
+          Transmission:  {{ car.transmission }}
+          Price: {{ car.price }} PLN
+        </pre>
+      </div>
+    </div>
   </div>
-  <div id="data">
-    <pre>
-      Company: {{ car.company }}
-      Model:  {{ car.model }}
-      Version: {{ car.version }}
-      Body Type: {{ car.bodyType }}
-      Capacity:  {{ car.capacity }}
-      Power:  {{ car.power }} KM
-      Fuel: {{ car.fuel }}
-      Fuel Consumption: {{ car.fuelConsumption }} l/100
-      Drive Type:  {{ car.driveType }}
-      Transmission:  {{ car.transmission }}
-      Price: {{ car.price }} PLN
-    </pre>
-  </div>
-</div>
+</mat-card>

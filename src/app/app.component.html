@@ -142,14 +142,12 @@
   </form>
   <div class="row">
     <div class="col-12">
-      <h3>Search params:</h3>
-      <pre>{{ searchParams | json }}</pre>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
       <h3>Cars:</h3>
-      <div class="col-12" *ngFor="let car of cars$ | async">
+      <div *ngIf="cars.length === 0">Please select any filter to find cars.</div>
+      <div *ngIf="!exactMatch">
+        We couldn't find cars that you are looking for, but you may be interested in:
+      </div>
+      <div class="col-12" *ngFor="let car of cars">
         <app-car-component [car]="car"> </app-car-component>
       </div>
     </div>

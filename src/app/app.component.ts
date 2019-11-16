@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
+  Car,
   CarBodyType,
   CarCompany,
   CarDriveType,
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit {
       value: 6.0
     }
   ];
-  cars$ = this.carDataService.getAllCars();
+  cars: Car[] = [];
   combustions = [
     {
       value: 1,
@@ -137,6 +138,7 @@ export class AppComponent implements OnInit {
     viewValue: key,
     value: CarDriveType[key]
   }));
+  exactMatch = true;
   form: FormGroup;
   fuels = Object.keys(CarFuel).map(key => ({
     viewValue: key,
@@ -176,13 +178,22 @@ export class AppComponent implements OnInit {
       value: 1000
     }
   ];
-  searchParams: any = {};
   transmissions = Object.keys(CarTransmission).map(key => ({
     viewValue: key,
     value: CarTransmission[key]
   }));
 
   constructor(private carDataService: CarDataService, private fb: FormBuilder) {}
+
+  getCars(): void {
+    const formValue = this.getFormValue();
+    if (Object.entries(formValue).length !== 0) {
+      this.carDataService.getCars(formValue).subscribe(res => {
+        this.cars = res.cars;
+        this.exactMatch = res.exactMatch;
+      });
+    }
+  }
 
   ngOnInit(): void {
     this.initForm();
@@ -194,6 +205,10 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.getCars();
+  }
+
+  private getFormValue(): any {
     const value = this.form.value;
     const searchParams: any = {};
     Object.keys(this.form.value).forEach(key => {
@@ -201,7 +216,7 @@ export class AppComponent implements OnInit {
         searchParams[key] = value[key];
       }
     });
-    this.searchParams = searchParams;
+    return searchParams;
   }
 
   private initForm(): void {

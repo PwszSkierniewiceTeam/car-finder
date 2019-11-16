@@ -30,7 +30,7 @@ $CarFinder-theme: mat-light-theme($CarFinder-primary, $CarFinder-accent, $CarFin
 //@include mat-autocomplete-theme($CarFinder-theme);
 @include mat-button-theme($CarFinder-theme);
 //@include mat-button-toggle-theme($CarFinder-theme);
-//@include mat-card-theme($CarFinder-theme);
+@include mat-card-theme($CarFinder-theme);
 //@include mat-checkbox-theme($CarFinder-theme);
 //@include mat-chips-theme($CarFinder-theme);
 //@include mat-datepicker-theme($CarFinder-theme);
